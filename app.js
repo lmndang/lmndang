@@ -6,8 +6,10 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://lmndang:nhat2601@cluster0.aga8r.mongodb.net/lmndang", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://lmndang:nhat2601@cluster0.aga8r.mongodb.net/", {useNewUrlParser: true, useUnifiedTopology: true});
 
+//mongodb+srv://lmndang:nhat2601@cluster0.aga8r.mongodb.net/lmndang
+//mongodb+srv://lmndang:<password>@cluster0.aga8r.mongodb.net/
 const projectSchema = {
   name: String,
   category: String,
@@ -20,6 +22,9 @@ const projectSchema = {
   webLink: String,
   webName: String
 }
+
+
+//public/img/portfolio/thumb/project-1.png
 
 const Project = mongoose.model("Project", projectSchema);
 
